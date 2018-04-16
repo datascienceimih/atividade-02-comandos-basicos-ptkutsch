@@ -1,0 +1,120 @@
+# #################################################
+# CENTRO UNIVERSITÁRIO METODISTA IZABELA HENDRIX #
+# PROGRAMAÇÃO FUNCIONAL E ORIENTADA A OBJETOS #
+# Projeto Integrador - Atividade 2 #
+# Aluno: Patrick Utsch #
+# #################################################
+
+# 1 - Crie 4 vetores de tamanho 10. Esses desenhos devem ser nomeados com apenas uma letra minúscula cada um.
+
+u  <- c ( 3 , 6 , 9 , 12 , 15 , 18 , 21 , 24 , 27 , 30 )
+t  <- c ( 5 , 10 , 15 , 20 , 25 , 30 , 35 , 40 , 45 , 50 )
+s  <- c ( 2 , 4 , 6 , 8 , 10 , 12 , 14 , 16 , 18 , 20 )
+c  <- c (1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 )
+
+# 2 - Execute um soma dos vetores, uma subtração dos vetores, multiplicação e divisão. Apresente os resultados.
+
+soma  <-  u  +  t  +  s  +  c
+soma
+
+# Resultado: 11  22  33  44  55  66  77  88  99 110
+
+subtração  <-  u  -  t  -  s  -  c
+subtração
+
+# Resultado: -5 -10 -15 -20 -25 -30 -35 -40 -45 -50
+
+multiplicacao   <- u  *  t  *  s  *  c
+multiplicação
+
+# Resultado: deu erro
+
+divisao   <-  u  /  t  /  s  /  c
+divisao 
+
+# Resultado: 0.0272727273 0.0068181818 0.0030303030 0.0017045455 0.0010909091 0.0007575758 0.0005565863 0.0004261364 0.0003367003 0.0002727273
+
+# 3 - Execute uma soma da raiz quadrada dos dois primeiros vetores com uma divisão
+#      da quarta fonte dos dois últimos vetores.
+
+calculo  <- (sqrt ( u ) + sqrt ( t )) + ( n ^ 8  /  s ^ 4 )
+calculo
+
+# Resultado: 4.030619  6.611767 11.935483  7.936482  8.898583 10.036273 10.498682 11.227441 11.966856 12.548300
+
+# 4 - Crie 2 matrizes de tamanho 10 X 10 com números que assumem casas decimais.
+
+A  <-  matriz (seq ( de  =  0,5 , a  =  5 , por  =  0,5 ), 10 , 10 )
+B  <-  matriz (seq ( de  =  5 , para  =  0.5 , por  =  - 0.5 ), 10 , 10 , byrow  =  T )
+
+
+# 5 - Multiplique como matrizes por 10. Divida como matrizes por 3. Multiplique como duas matrizes.
+
+Matrizes * 10
+A_10  <-  A * 10
+B_10  <-  B * 10
+
+
+# Matrizes / 3
+A_3  <-  A / 3
+B_3  <-  B / 3
+
+A_3
+
+B_3
+
+# Matrizes multiplicadas entre si
+AB  <-  A  % *%  B
+AB
+
+# 6 - Monte um banco de dados com os nomes de todos os seus colegas da aula de aula
+# Programação Funcional e Orientada a Objetos. Colocar nenhum banco de dados a uma idade de cada um,
+# o curso que faz, o tempo de me
+# no R (para essa variável, use números com 2 casas decimais). Exiba o banco no console.
+# Atenção: os dados do tipo caractere devem ser característicos mesmo; não deve ser transformados
+# automaticamente em fator.
+
+nomes  <- c ( " joao " , " pedro " , " jose " , " jesus " , " maria " , " antonia " , " madalena " )
+idades  <- c ( 24L , 34L , 49L , 28L , 15L , 30L , 42L )
+cursos  <- c ( " CD " , " CD " , " CD " , " CD " , " BioI " , " BioI " , " BioI " )
+torcida  <- c ( " Cruzeiro " , " democrata " , " cruzeiro " , " america " , " Cruzeiro " , " vila " , " tupi " )
+horasexerc  <- c ( 5,00 , 4,25 , 2,15 , 1,30 , 3,20 , 1,50 , 3,10 )
+
+
+colegas_classe  <-  data.frame ( nomes , idades , cursos , torcida , horasexerc , stringsAsFactors  =  F )
+
+colegas_classe
+
+
+# 7 - Com um comando, exiba o banco de dados em uma nova tela.
+
+Visualizar ( colegas_classe )           
+
+# 8 - Confira várias informações sobre o banco de dados
+#      usando apenas um comando.
+
+str ( colegas_classe )
+
+# 9 - Outras variáveis ​​são o fator de ordem do tipo (variáveis ​​categóricas).
+#      O curso e o tempo de futebol são duas.
+#      Usando um comando transforme essas variáveis ​​em factor.
+
+colegas_classe $ cursos  <- as.factor ( colegas_classe $ cursos )
+colegas_classe $ torcida  <- as.factor ( colegas_classe $ torcida )
+
+# 10 - Acrescente, no final do banco de dados, mais uma linha com
+# informações de todas as variáveis ​​para o professor.
+
+colegas_classe  <- rbind ( colegas , data.frame ( nomes  =  " Neylson " , idades  =  30L , cursos  =  " CD / BioI " , torcida  =  "nao sei  " , horasexerc  =  5.20 ))
+
+# 11 - Crie uma lista com todos os objetos que você pode executar neste exercício. Exiba uma lista.
+# Apresentar uma classe da lista.
+
+lista  <-  lista ( x , y , n , s , soma , subtração , multiplicação , divisao ,
+                   calculo , A , B , A_10 , A_3 , B_10 , B_3 , AB , colegas )
+
+lista
+
+classe ( lista )
+
+sapply ( lista , classe )
